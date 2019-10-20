@@ -100,9 +100,9 @@ app
   //.use(views(path.join(__dirname, '/views'), { extension: 'pug' }));
 
 routerUI
-  .get('/', async (ctx, next) => ctx.body = await readFile(__dirname + '/client/dist/index.html', { encoding: 'utf-8' }))
-  .get('/new', async (ctx, next) => ctx.body = await readFile(__dirname + '/client/dist/index.html', { encoding: 'utf-8' }))
-  .get('/:id', async (ctx, next) => ctx.body = await readFile(__dirname + '/client/dist/index.html', { encoding: 'utf-8' }));
+  .get('/', async (ctx, next) => ctx.body = await readFile(__dirname + '/dist/index.html', { encoding: 'utf-8' }))
+  .get('/new', async (ctx, next) => ctx.body = await readFile(__dirname + '/dist/index.html', { encoding: 'utf-8' }))
+  .get('/:id', async (ctx, next) => ctx.body = await readFile(__dirname + '/dist/index.html', { encoding: 'utf-8' }));
 
 routerAPI
   .use(cors())
