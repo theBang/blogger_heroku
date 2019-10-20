@@ -140,7 +140,7 @@ routerAPI
 app
   .use(routerAPI.routes())
   .use(routerUI.routes())
-  .listen(config.PORT, () => console.log(`process: ${process.pid}`));
+  .listen(process.env.PORT || config.PORT, () => console.log(`process: ${process.pid}`));
 
 mongoose.connect(config.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.connection.on('connected', () => console.log('Mongoose opened to ' + config.DB_URL));
