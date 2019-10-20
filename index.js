@@ -124,7 +124,7 @@ routerAPI
     const deleted = await Post.deleteOne({ _id: ctx.params.id });
 
     if (deleted.ok) ctx.body = post;
-    else ctx.throw(400, 'Post was not deleted');
+    else ctx.throw(418, 'Post was not deleted');
   })
   .put('/:id', async (ctx, next) => {
     const replaced = await Post.replaceOne({ _id: ctx.params.id }, {
@@ -134,7 +134,7 @@ routerAPI
     });
 
     if (replaced.nModified) ctx.body = await Post.findById(ctx.params.id).exec();
-    else ctx.throw(400, 'Post was not modified');
+    else ctx.throw(418, 'Post was not modified');
   });
 
 app
